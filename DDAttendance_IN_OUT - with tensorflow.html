@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Attendance In/Out 1001</title>
+    <!-- <link rel="stylesheet" href="Attendance_In.css"> -->
+    <style media="screen">
+    /* Add any additional styling here */
+    body{
+      /* background-color: #121227; */
+      display: flex;
+      height: 98vh;
+      justify-content:center;
+      align-items: center;
+      padding-right: 10px;
+      background-color:#021952;
+    }
+
+    .videoClass{
+
+      margin-right: 30px;
+    }
+    .container{
+      /* max-height: 1000px; */
+
+      max-width: 500px;
+      width: 100%;
+      background-color:#fff;
+      padding: 25px 30px;
+      border-radius: 7px;
+      box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+    }
+    .container h1{
+      margin-top: 10px;
+      font-size: 30px;
+      font-weight: 900;
+      justify-content: center;
+      text-align: center;
+      color:White;
+      background-color: #021952;
+        box-shadow: 0px 0px 10px 2px #ccc;
+
+    }
+    .input_feild{
+      /* margin: 20px; */
+      margin: 10px;
+      display: flex;
+      align-items: center;
+
+      color:;
+    }
+    label{
+      /* border: 3px solid black; */
+      width:90%;
+      /* width:50%; */
+      margin-right: 200px;
+      font-size: 18px;
+    }
+    .input{
+      width: 100%;
+      color: black;
+      outline: none;
+      border:2px solid #121227;
+      border-radius: 5px;
+    }
+
+    .input:focus{
+      border:2px solid #121227;
+      box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    }
+    select{
+      width: 100%;
+      color: black;
+      outline: none;
+      border:2px solid #021952;
+      border-radius: 5px;
+    }
+    select:focus{
+      border:2px solid #021952;
+      box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    }
+
+    .CamButtons{
+      /* display: flex; */
+      height: 100%;
+      max-width: 500px;
+      width: 30%;
+      outline:none;
+      margin-left: 50px;
+      color:#00FFDF;
+      font-size: 14px;
+      margin-bottom: 10px;
+      /* font-weight: 1000; */
+      /* border-radius: 7px; */
+      background :#021952;
+      outline: none;
+    }
+    .CamButtons:hover{
+      color:#00FFDF;
+      background-color::#021952;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.1s;
+    }
+
+
+    form .button input{
+     /* display: flex; */
+     height: 100%;
+     max-width: 500px;
+     width: 50%;
+     outline:none;
+     margin-left: 120px;
+     color:#00FFDF;
+     font-size: 20px;
+     /* font-weight: 1000; */
+     border-radius: 7px;
+       background : #021952;
+     outline: none;
+    }
+    form .button input:hover{
+      color: #00FFDF;
+      background-color: #021952;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      transition: 0.1s;
+    }
+
+    input[readonly]{
+      background-color:#ebeae8;
+      color: black;
+    }
+    #loading{
+      color: red;
+      margin-left: 140px;
+      font-size: 18px;
+    }
+
+    /*
+    .dropdwn-content{
+    max-height: 1px;
+    overflow-y: auto;
+    } */
+    /* =============================================================================================== */
+
+    input[type="text"] {
+    /* display: flex; */
+    width: 50%;
+    margin-left: 20%;
+    margin-bottom: 5px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    }
+
+    select {
+        width: 55%;
+        margin-left: 20%;
+        margin-bottom: 5px;
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #fff; /* Add background color */
+        color: black; /* Add text color */
+        outline: none;
+    }
+
+    select:focus {
+        border-color: #021952; /* Change border color on focus */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add box shadow on focus */
+      }
+
+
+
+
+
+    #label-container {
+    /* position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px; */
+    margin-left: 75px;
+    }
+
+    #webcam-container{
+    margin-left: 30%;
+    margin-bottom: 5px;
+    }
+    #label-container{
+    margin-left: 40%;
+
+    }
+
+    .button-02{
+    margin-left: 30%;
+    display: flex;
+    margin: 15px 30%;
+    }
+    .Start{
+    margin-right: 20px
+    }
+
+    button {
+    /* margin-left: 20%; */
+    padding: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #021952;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    color: #00FFDF;
+    }
+
+    button:hover {
+    background-color: #021952;
+    text-transform: uppercase;
+    color: #00FFDF;
+
+    }
+
+    #loading-message-start{
+    margin-left: 20%;
+    color: red;
+    }
+    #loading-message-submit{
+    margin-left: 20%;
+    color: red;
+    }
+    #loading-message{
+    margin-left: 20%;
+    color: red;
+    }
+
+
+
+
+
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <div class="container">
+        <h1>Attendance In/Out</h1>
+        <form class="" name="Tensorflow01" method="post" id="myform">
+
+
+
+
+            <div class="">
+              <!-- <label for=""> Worker Name</label> -->
+              <select class=Worker name="Name"  id="Worker" required>
+                <option value="">Select Worker Name</option>
+              </select>
+            </div>
+
+              <!-- <div class="input-row">
+                <input name="Name" type="text" id="predictedClassInput" placeholder="Person Name"readonly required>
+              </div> -->
+
+
+              <div class="input-row">
+                  <input name="Date" type="text" id="date" placeholder="date"readonly required>
+              </div>
+
+              <div class="input-row">
+                  <input name="Time" type="text" id="time" placeholder="time"readonly required>
+              </div>
+
+              <div class"input-row">
+                  <input name="Role" type="text" id="Role" placeholder="Role"readonly required>
+              </div>
+
+              <div class="input-row">
+                  <input name="Type" type="text" id="Type" placeholder="Type"readonly required>
+              </div>
+
+              <div class="input-row">
+                  <input name="ContractorName" type="text" id="ContractorName" placeholder="ContractorName"readonly required>
+              </div>
+
+              <div class="button-02">
+                    <!-- <div class="Start">
+                      <button type="button" id="startButton" onclick="init()">Start</button>
+                    </div> -->
+
+                    <div class="button">
+                      <button type="button" id="inOutStatusBtn" onclick="fetchLastEntry()" disabled>In/Out Status</button>
+                  </div>
+                  <div class="input-row">
+                      <input name="Attendance Status" type="text" id="attendanceStatusInput" placeholder="Attendance Status"readonly required>
+                  </div>
+
+
+              </div>
+            <div class="button">
+              <input type="submit" name="submit" id="submitBtn" value="Submit">
+            </div>
+            <div id="loading-message"></div>
+            <div id="loading-message-submit"></div>
+            <div id="loading-message-start"></div>
+            <div id="loading-message-status"></div>
+
+        </form>
+    </div>
+
+
+
+
+  <script type="text/javascript">
+
+  // formated_time = document.getElementById("time");
+  setInterval(()=>{
+    let d = new Date();
+    const formated_time = time.innerHTML = d.toLocaleTimeString();
+    time.value=formated_time;
+  },1000)
+
+
+  function setCurrentDate() {
+    var currentDate = new Date();
+
+    const year = currentDate.getFullYear();
+    const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+    const day = currentDate.getDate().toString().padStart(2, '0');
+
+    // const currentDateString = `${year}-${month}-${day}`;
+        const currentDateString = year+'-'+month+'-'+day;
+
+    document.getElementById('date').value = currentDateString;
+}
+
+setCurrentDate();
+setInterval(setCurrentDate, 86400000);
+  </script>
+
+  <script type="text/javascript">
+
+  </script>
+
+  <script type="text/javascript">
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwRPLjq_4TqWQ73ekrDKSv7xOSfcKgJShrbzfWtZCnw1HZoa3fueYILGl95e0LPYa3XhA/exec'
+        // const scriptURL = 'https://script.google.com/macros/s/AKfycbwIQdxOZHmQv_BiH5vMoSAVQeDlrtANzNxElTKL1Rco5q_wDc-3yhQZszk3avkLpRiIgg/exec'
+        const form = document.forms['Tensorflow01']
+
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          document.getElementById('loading-message-submit').innerText = "Submitting Form.....";
+
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)
+            })
+            .then(response =>{
+              document.getElementById('loading-message-submit').style.display = "none"
+
+               alert("Thank you! your form is submitted successfully." );
+             })
+            .then(()=> {  window.location.reload();
+          })
+          .catch(error => console.error('Error!', error.message))
+        })
+
+  </script>
+  <script type="text/javascript">
+
+  document.addEventListener("DOMContentLoaded", function () {
+    let APIurl4="https://script.google.com/macros/s/AKfycbx-VgtDGo9sD82Qiex7a4-lEItpsT6GyQOC1PibXv154xEMu_sG9QeB6a5dXrsbcI4kGw/exec"
+
+    const WorkerSelect = document.querySelector('.Worker');
+
+  function loadProject(){
+    fetch(APIurl4)
+      .then(responce => responce.json())
+      .then(data => {
+
+        // console.log(data)
+           data.forEach(Worker =>{
+             const option = document.createElement('option')
+             option.textContent = Worker.PersonName
+             option.value = Worker.PersonName
+             WorkerSelect.appendChild(option)
+           })
+      })
+      .catch(error=> console.log(error))
+  }
+  window.onload = loadProject
+
+  WorkerSelect.addEventListener('change', function () {
+       const selectedName = this.value;
+       inOutStatusBtn.removeAttribute('disabled'); // Enable the In/Out Status button
+   });
+
+
+
+
+  WorkerSelect.addEventListener('change', function () {
+      const selectedName = this.value;
+      fetch(APIurl4)
+        .then(responce => responce.json())
+        .then(data => {
+      // console.log(data);
+      const filteredData = data.filter(wholeData => wholeData.PersonName === selectedName);
+      // console.log(filteredData);
+      if (filteredData.length > 0) {
+         filteredData.forEach(item => {
+           // document.getElementById('Role').value = item.;
+             document.getElementById('Role').value = item.UserRole;
+             document.getElementById('Type').value = item.Type;
+                 if (item.ContractorName.trim() === "") {
+                  document.getElementById('ContractorName').value = "Companies Employee";
+              } else {
+                  document.getElementById('ContractorName').value = item.ContractorName;
+              }
+         });
+      } else {
+             document.getElementById('Role').value = "User is not Enrolled";
+             document.getElementById('Type').value = "User is not Enrolled";
+             document.getElementById('ContractorName').value = "User is not Enrolled";
+      }
+
+    });
+
+
+  });
+  });
+  </script>
+
+  <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+             const submitBtn = document.getElementById('submitBtn');
+             submitBtn.disabled = true;
+
+    function fetchLastEntry() {
+      document.getElementById('loading-message-status').innerText = "Your Status...";
+
+      const apiUrl = 'https://script.google.com/macros/s/AKfycbzhh_SqDbcvJkpGmwg1XpN_64nMwwEnlKUH4ueK7tPqA8V7npYVxD2b1Nz5ctnwPFuMHQ/exec';
+
+      fetch(apiUrl)
+          .then(response => response.json())
+          .then(data => {
+
+              document.getElementById('loading-message-status').style.display = "none"
+
+            console.log(data);
+            document.getElementById('loading-message').style.display = "none";
+
+            var name = document.getElementById('Worker').value;
+            console.log(name);
+
+            const filteredData = data.filter(wholeData => wholeData.Name === name);
+            console.log(filteredData);
+            const lastdata = filteredData.pop();
+            console.log(lastdata);
+            if (lastdata) {
+                result(lastdata);
+            } else {
+                document.getElementById('attendanceStatusInput').value = "IN";
+            }
+          })
+          .catch(error => {
+              console.error('Error fetching last entry:', error);
+          });
+
+
+    }
+
+    inOutStatusBtn.addEventListener('click', function () {
+               fetchLastEntry();
+           });
+
+            function result(lastdata) {
+                var lastdataRow = lastdata.Status_IN;
+                if(lastdataRow === "IN"){
+                    console.log("OUT");
+                    document.getElementById('attendanceStatusInput').value = "OUT";
+                } else {
+                    console.log("IN");
+                    document.getElementById('attendanceStatusInput').value = "IN";
+                }
+            }
+            submitBtn.disabled = false;
+      });
+  </script>
+
+
+
+</body>
+
+</html>
+
+<!-- // const NameInput = document.getElementById('predictedClassInput');
+
+// NameInput.addEventListener('change', function() {
+  //     const nameValue = this.value;
+  //     fetch(apiurl2)
+  //         .then(response => response.json())
+  //         .then(data => {
+    //             const filteredData = data.filter(item => item.Name === nameValue);
+    //             if (filteredData.length > 0) {
+      //                 // Data found, perform actions here
+      //                 // For example, setting In/Out status
+      //                 console.log("Data found:", filteredData);
+      //             } else {
+        //                 // No data found, handle accordingly
+        //                 console.log("No data found for:", nameValue);
+        //             }
+        //         })
+        //         .catch(error => {
+          //             console.error('Error fetching data:', error);
+          //         });
+          // }); -->
+
+
+          <!-- // fetch(apiURL3)
+          // .then((response) => response.json())
+          // .then((data) => {
+          //   console.log(data);
+          //   // const arrayvalue = data.filter((newData) => newData.PersonName === predictedClass);
+          // const arrayvalue = data.find((newData) => newData.PersonName)
+          //   console.log(arrayvalue);
+          //   if (arrayvalue) {
+          //     // Update other input fields with data from the matching record
+          //     document.getElementById('Role').value = arrayvalue.UserRole;
+          //     document.getElementById('ContractorName').value = arrayvalue.ContractorName;
+          //
+          //     // Update other fields as needed
+          //   } else {
+          //
+          //     document.getElementById('Role').value = 'Not register';
+          //     document.getElementById('ContractorName').value = 'Not register';
+          //
+          //
+          //   }
+          //
+          // })
+          // .catch((error) => {
+          //   console.error(error);
+          // }); -->

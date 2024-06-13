@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- <link rel="stylesheet" href="Registration.css"> -->
+<style media="screen">
+*{
+  margin:0px;
+  padding:0px;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  height: 98vh;
+  justify-content:center;
+  align-items: center;
+  /* padding-right:100px; */
+  background-color:#021952;
+}
+
+.container{
+  max-width: 500px;
+  width: 100%;
+  background-color:#fff;
+  padding: 25px 30px;
+  border-radius: 7px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+.container .head{
+  font-size: 30px;
+  font-weight: 900;
+  justify-content: center;
+  text-align: center;
+  color:#021952;
+}
+form .outer.box{
+  width: calc(100%/2 - 20px);
+}
+.outer .box{
+     margin : 20px 0px;
+}
+.input{
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  width: 80%;
+  height: 30px;
+  /* margin-right:200px; */
+  margin-left:50px;
+  padding-left: 20px;
+  margin-top: 10px;
+  outline:none;
+  border:2px solid grey;
+  border-radius: 10px;
+}
+
+
+.select{
+  margin-top: 10px;
+  margin-left:50px;
+
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  width: 80%;
+  height: 30px;
+  margin-right:40px;
+  padding-top: 5px;
+  padding-left: 20px;
+  outline:none;
+  border:2px solid grey;
+  border-radius: 10px;
+}
+
+
+.Container_button{
+    display: flex;
+    margin-left: 90px;
+
+}
+.button2{
+  margin-top: 5px;
+}
+.button2 a {
+  text-decoration: none;
+  padding: 5px 20px;
+margin-left: 120px;
+height: 100%;
+max-width: 500px;
+width: 50%;
+outline:none;
+/* margin-left:60px; */
+color:#00FFDF;
+/* font-size: 20px; */
+/* font-weight: 1000; */
+border-radius: 7px;
+background :#021952;
+outline: none;
+
+
+}
+
+.button1{
+  margin-top: 5px;
+}
+.button1 a{
+
+  /* margin-left: 20px; */
+  text-decoration: none;
+  padding: 5px 20px;
+
+  height: 100%;
+  max-width: 500px;
+  width: 100%;
+  outline:none;
+  /* margin-left:60px; */
+  color:#00FFDF;
+  /* font-size: 20px; */
+  /* font-weight: 1000; */
+  border-radius: 7px;
+  background :#021952;
+  outline: none;
+}
+
+
+form .button input{
+ height: 100%;
+ max-width: 500px;
+ width: 100%;
+ outline:none;
+ margin-left:60px;
+ color:#00FFDF;
+ font-size: 20px;
+ /* font-weight: 1000; */
+ border-radius: 7px;
+ background :#021952;
+ outline: none;
+}
+form .button input:hover{
+  color:#00FFDF;
+  background-color:;
+  text-transform: uppercase;
+  /* letter-spacing: 3px; */
+  transition: 0.1s;
+}
+
+.totalRadio{
+  margin-top:10px;
+  display: flex;
+}
+.label{
+    margin-left: 60px;
+}
+.radio-options{
+  /* margin-top: 10px; */
+  display: flex;
+  margin-left: 100px;
+  margin-bottom: 10px;
+}
+
+</style>
+
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="head">Employee Registration Form </h1>
+      <form class="" name="WorkerForm" action="" method="post">
+        <div class="Outer">
+          <div class="box">
+            <input type="text" name="WorkerName" class="input" value="" placeholder="Enter Your Name" required>
+          </div>
+          <div class="box">
+            <select class="select" name="Jobrole" required>
+              <option value="">Select your role</option>
+              <option value="Welder">Welder</option>
+              <option value="Fitter">Fitter</option>
+              <option value="Helper">Helper</option>
+              <option value="Supervisor">Supervisor</option>
+            </select>
+          </div>
+          <div class="box">
+            <input type="text" name="PhoneNumber" class="input" value="" placeholder="Enter Your Cell Number" >
+          </div>
+
+          <!-- <div class="box">
+                      <input type="text" name="DateTime" id="DateTime" class="input" value="" placeholder="Enter Date and Time (Indian format: dd/mm/yyyy hh:mm)" required>
+          </div> -->
+          <div class="box">
+            <div class="totalRadio">
+              <label class="label">Employment Staus</label>
+              <div class="radio-options">
+                <!-- <label><input type="radio" name="Employment_Status" value="Terminated">Terminate</label> -->
+                <label><input type="radio" name="Employment_Status" value="Employee" checked>Employee</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="box">
+            <input type="text" name="Employment Status" class="input" value="Employee" placeholder="">
+          </div> -->
+                <div class="Container_button">
+
+                  <!-- <div class="button1">
+                    <a href="Terminate.html">Terminate</a>
+                  </div> -->
+
+                  <div class="button">
+                    <input type="submit" name="submit" value="Submit">
+                  </div>
+
+                  <div class="button2">
+                    <a href="EditPage.html">Edit</a>
+                  </div>
+
+                </div>
+
+          <div>
+            <p id="Loadingmessage"></p>
+
+          </div>
+        </div>
+      </form>
+    </div>
+
+     <script type="text/javascript">
+
+     </script>
+
+    <script type="text/javascript">
+    // const scriptURL = "https://script.google.com/macros/s/AKfycbzBhLecv5LwYtxtPse8Rqfr5_G7X7b0BTvRLkq89w55ZPx6NQ6Wg26wV2kfFD_pv9Uk/exec"
+
+    // edit---->
+    // const scriptURL = "https://script.google.com/macros/s/AKfycbxmFFejKWrO1qnNsKbqkGsrcybsU1B_AiAqasR3r2zPq0BkWPfvtSnFD7gqH1bIFeTb/exec"
+
+// registration url---->
+      const scriptURL = "https://script.google.com/macros/s/AKfycbzcO2Hsrk42-bg3M241Oe0X1QWFH26ESUUX6BUk5HpqB6iSjIlJXp5l0P6IV-SpIFl4/exec"
+
+      const form = document.forms['WorkerForm']
+
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+          document.getElementById('Loadingmessage').innerText = "Submitting Form.....";
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)
+          })
+          .then(response =>{
+            document.getElementById('Loadingmessage').style.display = "none"
+             alert("Thank you! your form is submitted successfully." )
+           })
+          .then(()=> {window.location.reload();
+        })
+        .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+
+    <script type="text/javascript">
+    // function updateDateTime() {
+    //     const currentDate = new Date();
+    //     const year = currentDate.getFullYear();
+    //     const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+    //     const day = currentDate.getDate().toString().padStart(2, '0');
+    //     let hours = currentDate.getHours();
+    //     const minutes = currentDate.getMinutes().toString().padStart(2, '0');
+    //     const seconds = currentDate.getSeconds().toString().padStart(2, '0');
+    //     const ampm = hours >= 12 ? 'PM' : 'AM';
+    //     hours = hours % 12;
+    //     hours = hours ? hours : 12; // Handle midnight
+    //     const formattedHours = hours.toString().padStart(2, '0');
+    //     const dateTimeString = `${day}/${month}/${year} ${formattedHours}:${minutes}:${seconds} ${ampm}`;
+    //     document.getElementById('DateTime').value = dateTimeString;
+    //   }
+    //
+    //   // Update date and time initially
+    //   updateDateTime();
+    //
+    //   // Update date and time every second
+    //   setInterval(updateDateTime, 1000);
+    </script>
+  </body>
+</html>

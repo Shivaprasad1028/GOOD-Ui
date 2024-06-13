@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- <link rel="stylesheet" href="User_registration.css"> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script> -->
+<style media="screen">
+*{
+  margin:0px;
+  padding:0px;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  height: 100vh;
+  justify-content:center;
+  align-items: center;
+  /* padding-right:100px; */
+  background: url(images/aipt-bg1.jpg);
+}
+.videoClass{
+
+  margin-right: 30px;
+}
+.container{
+  max-width: 800px;
+  width: 100%;
+ background: url(images/aipt-bg1.jpg);
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.container .head{
+  font-size: 30px;
+  font-weight: 900;
+  justify-content: center;
+  text-align: center;
+  color:#021952;
+}
+
+.outer .box{
+     margin : 20px 0px;
+}
+.outer .box input{
+
+  justify-content: center;
+  align-items: center;
+
+  width: 150%;
+  height: 50px;
+  margin-right:40px;
+  padding-left: 20px;
+  outline:none;
+  border:2px solid #705d70;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.outer .box-u input{
+
+justify-content: center;
+align-items: center;
+
+width: 101%;
+margin-bottom: 5%;
+height: 50px;
+margin-right:40px;
+padding-left: 20px;
+outline:none;
+border:2px solid #705d70;
+border-radius: 5px;
+}
+.outer .box textarea{
+  justify-content: center;
+  align-items: center;
+font-size: 14px;
+  width: 150%;
+  height: 50px;
+  margin-right:40px;
+  padding-top: 5px;
+  padding-left: 20px;
+  outline:none;
+  border:2px solid #705d70;
+  border-radius: 5px;
+}
+
+.outer .box select{
+  justify-content: center;
+  align-items: center;
+ 
+  width: 200%;
+  height: 50px;
+  margin-right:40px;
+  padding-top: 5px;
+  padding-left: 20px;
+  outline:none;
+  border:2px solid #705d70;
+  border-radius: 5px;
+}
+
+.CamButtons{
+  /* display: flex; */
+  height: 100%;
+  max-width: 500px;
+  width: 30%;
+  outline:none;
+  margin-left: 50px;
+  color:#00FFDF;
+  font-size: 14px;
+  margin-bottom: 10px;
+  /* font-weight: 1000; */
+  /* border-radius: 7px; */
+  background :#021952;
+  outline: none;
+}
+.CamButtons:hover{
+  color:#00FFDF;
+  background-color:#021952;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.1s;
+}
+
+
+
+form .button input{
+ height: 52px;
+ max-width: 500px;
+ width: 100%;
+ outline:none;
+ margin-left: 100px;
+ color:#ffffff;
+ font-size: 25px;
+ font-family: Arial, Helvetica, sans-serif;
+ /* font-weight: 1000; */
+ border-radius: 7px;
+ background :#021952;
+ outline: none;
+ justify-items: center;
+ align-items: center;
+}
+form .button input:hover{
+  color:#00FFDF;
+  background-color:#021952;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: 0.1s;
+}
+#loading{
+  color: red;
+  margin-left: 140px;
+  font-size: 18px;
+}
+#ContractorName[disabled] {
+
+       background-color: #edebeb; /* Light gray */
+       color: #808080; /* Dark gray text */
+   }
+   .edit-box{
+    display: flex;
+    width: 100%;
+    gap: 20%;
+   }
+
+</style>
+  </head>
+  <body>
+    <div class="videoClass">
+      <video src="" id="video"  style="display: none;" autoplay width="400" height="500" ></video>
+    </div>
+    <div class="videoClass">
+      <canvas id="canvas" style="display: none;" width="300" height="400"></canvas>
+    </div>
+
+
+    <div class="container">
+      <h1 class="head" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;">Registration Form</h1>
+      <form class="" name="Registration" method="post">
+        <div class="outer">
+<div class="edit-box">
+          <div class="box">
+            <input type="text" name="PersonName" value="" id="inputName"placeholder="Enter your Name" required >
+          </div>
+
+          <div class="box">
+            <select class="" id="UserType" name="Type" onchange="InputType()" required>
+              <option value="">Select your Type </option>
+              <option value="On Payroll">On Payroll</option>
+              <option value="Contract Based">Contract Based</option>
+            </select>
+          </div>
+        </div>
+        <div class="edit-box">
+          <div class="box">
+            <input type="text" id="ContractorName" name="ContractorName" value="" placeholder="Your Contractor Name" disabled>
+          </div>
+
+
+          <div class="box">
+            <select class="" name="Type"  required>
+              <option value="">Select your Role </option>
+              <option value="Welder">Welder</option>
+              <option value="Grinder">Grinder</option>
+              <option value="Helper">Helper</option>
+              <option value="Supervisor">Supervisor</option>
+              <option value="Fitter">Fitter</option>
+           
+      
+            </select>
+            <!---
+            <select class="" name="UserRole" required >
+              <option value="">Select your role</option>
+              <option value="Welder">Welder</option>
+              <option value="Grinder">Grinder</option>
+              <option value="Helper">Helper</option>
+              <option value="Supervisor">Supervisor</option>
+              <option value="Fitter">Fitter</option>
+            </select>-->
+          </div>
+        </div>
+        <div class="edit-box">
+          <div class="box">
+            <input type="address" name="Address"  placeholder="Enter Your Address" required ></input>
+          </div>
+          <div class="box" >
+            <input type="email" name="Email" value="" id="Email" placeholder="Enter email-Id" required >
+          </div>
+        </div>
+        <div class="edit-box">
+          <div class="box">
+            <input type="number" name="adharNumber" value="" id="AdharCard" placeholder="Enter Your Adharcard Number"  >
+          </div>
+          <div class="box">
+            <input type="text" name="panNumber" value="" id="PanCard"placeholder="Enter Your Pancard Number">
+          </div>
+          </div>
+          <div class="box-u" >
+            <input type="number" name="ContactNumber" value="" id="ContactNumber" placeholder="Enter Your Cell Number" required >
+          </div>
+          <!-- <button class="CamButtons"type="button"class name="button" onclick="opencam()" required >Open camera</button>
+          <button class="CamButtons"type="button" name="capture" onclick="captureMultiplePhotos()" required >Capture</button>
+          <button class="CamButtons"type="button" name="capture" id="selectDirectoryButton" required >select directory</button>
+          <button class="CamButtons"type="button" name="capture" onclick="saveImagesToDirectory()" required >Save</button> -->
+        </div>
+        <div class="button">
+          <input type="submit" name="submit" value="Submit">
+        </div>
+      </form>
+      <script type="text/javascript">
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzxw-Mi6OIh2EoAxSrctUMRrR7xrYPnKLzZzot1JNuqbrBTTatxlQPwIn4VhdwFceZbnA/exec'; // You need to provide a valid URL for your server-side script
+        const form = document.forms['Registration'];
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+
+          const loadingMessage = document.createElement('p');
+            loadingMessage.textContent = 'Submitting form... Please wait.';
+            loadingMessage.id ='loading';
+            form.appendChild(loadingMessage);
+
+
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)
+            })
+            .then(response =>
+              {
+                form.removeChild(loadingMessage);
+                alert("Thank you! your form is submitted successfully." );
+              })
+            .then(()=> {  window.location.reload();
+          })
+          .catch(error => {
+            form.removeChild(loadingMessage);
+            console.error('Error!', error.message)
+          })
+
+        })
+
+
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        let video = document.getElementById('video');
+
+        function opencam() {
+          if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+              video.srcObject = stream;
+              video.style.display = 'block';
+
+            });
+          } else {
+            console.log('Camera access not available');
+          }
+        }
+
+        // Optionally, you can call selectDirectory() function when the page loads or when the user clicks a button to select the directory
+
+// Optionally, you can call selectDirectory() function when the page loads or when the user clicks a button to select the directory
+
+        // Add an event listener to the input element for the name
+
+// ============================================================
+//
+        let fileCounter = 1;
+        let imageCaptured = false;
+        let imageBlobs = []; // To store blobs temporarily
+
+        async function captureMultiplePhotos() {
+              if (video.srcObject) {
+                const interval = 200;
+                const numberOfPhotos = 100;
+                const canvasWidth = 300;
+                const canvasHeight = 200;
+                let imagesCaptured = 0;
+                for (let i = 0; i < numberOfPhotos; i++) {
+                  setTimeout(() => {
+                    capturePhoto(canvasWidth, canvasHeight);
+                    imagesCaptured++;
+                    if (imagesCaptured === numberOfPhotos) {
+
+                      alert("All images captured successfully!");
+                    }
+                  }, i * interval);
+                }
+
+                setTimeout(() => {
+                  saveImagesToDirectory();
+                }, numberOfPhotos * interval);
+              } else {
+                console.log('Video stream not available');
+                alert("Please open the camera");
+              }
+            }
+
+
+        async function capturePhoto(canvasWidth, canvasHeight) {
+          canvas.width = canvasWidth;
+          canvas.height = canvasHeight;
+          ctx.drawImage(video, 0, 0, canvasWidth, canvasHeight);
+          canvas.style.display = 'block';
+          imageCaptured = true;
+
+          const selectedName = document.getElementById('inputName').value;
+          const customFilename = `${selectedName}_${fileCounter}`;
+
+          // Convert the canvas image to Blob with PNG format
+          canvas.toBlob(function(blob) {
+            imageBlobs.push({ blob, filename: customFilename });
+            console.log(`${customFilename} captured`);
+          }, 'image/png'); // Specify 'image/png' for PNG format
+
+          fileCounter++;
+        }
+
+        let selectedDirectoryHandle = null; // Variable to store the selected directory handle
+
+  async function selectDirectory() {
+      try {
+          selectedDirectoryHandle = await window.showDirectoryPicker(); // Prompt the user to select a directory
+          console.log("Directory selected:", selectedDirectoryHandle);
+      } catch (error) {
+          console.error('Error selecting directory:', error);
+      }
+  }
+
+  // Attach an event listener to a button to trigger the directory picker
+  const selectDirectoryButton = document.getElementById('selectDirectoryButton');
+  selectDirectoryButton.addEventListener('click', selectDirectory);
+
+  async function saveImagesToDirectory() {
+  if (!selectedDirectoryHandle) {
+      console.error('No directory selected');
+      return;
+  }
+
+  try {
+      await Promise.all(imageBlobs.map(async ({ blob, filename }) => {
+          const fileHandle = await selectedDirectoryHandle.getFileHandle(`${filename}.png`, { create: true });
+          const writable = await fileHandle.createWritable();
+          await writable.write(blob);
+          await writable.close();
+          console.log(`${filename}.png saved to ${selectedDirectoryHandle.name}`);
+      }));
+
+      console.log('All images saved successfully');
+  } catch (error) {
+      console.error('Error saving images:', error);
+  }
+}
+
+
+      // Your code to save images to the selected directory goes here
+
+
+//         ============================================
+//   async function saveImagesToDownloads() {
+//     try {
+//         for (let i = 0; i < imageBlobs.length; i++) {
+//             const { blob, filename } = imageBlobs[i];
+//             const url = URL.createObjectURL(blob);
+//             const link = document.createElement('a');
+//             link.href = url;
+//             link.download = `${filename}.png`;
+//             document.body.appendChild(link);
+//             link.click();
+//             document.body.removeChild(link);
+//             URL.revokeObjectURL(url);
+//         }
+//         alert("All images downloaded successfully");
+//         // Optionally clear the imageBlobs array or perform other actions
+//     } catch (error) {
+//         console.error('Error:', error);
+//     }
+// }
+//
+
+        // Modify your button to call captureMultiplePhotos() and trigger the directory picker
+
+
+        // Modify your button to call captureMultiplePhotos()
+
+
+  // Modify your button to call captureMultiplePhotos()
+
+// Modify your button to call captureMultiplePhotos()
+
+    // Modify your button to call captureMultiplePhotos() instead of capturePhoto()
+
+        // function capturePhoto() {
+          //   if (video.srcObject) {
+            //     // canvas.width = video.videoWidth;
+            //     // canvas.height = video.videoHeight;
+            //     canvas.width = '300';
+            //     canvas.height = '200';
+            //     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            //
+            //     canvas.style.display = 'block';
+            //
+            //   } else {
+              //     console.log('Video stream not available');
+              //   }
+              // }
+
+
+
+const apiurl2 = "https://script.google.com/macros/s/AKfycbx_ThXuXdq78NZk3ozvW0HajRdLgyl8n8bgUkZQEO22BjvirARtnYRAxQoJVYED8kWOgg/exec";
+var ContactNumber = document.getElementById('ContactNumber');
+
+ContactNumber.addEventListener('change', function () {
+  // var selectedNumber = ContactNumber.value;
+  fetch(apiurl2)
+    .then(response => response.json())
+    .then(data => {
+      // console.log(data.ContactNumber);
+      var firstnum = document.getElementById('ContactNumber').value;
+      // var firstE_Mail = document.getElementById('Email').value;
+      // var firstnum = document.getElementById('AdharCard').value;
+      // var firstnum = document.getElementById('PanCard').value;
+      // console.log(firstnum);
+
+      const filteredData = data.filter(wholeData => wholeData.ContactNumber == firstnum);
+      // console.log(filteredData);
+      if(filteredData.length==0){
+        console.log("Valid");
+      }else{
+        console.log(filteredData);
+         alert("User is Alredy registered");
+         window.location.reload(true);
+          }
+      })
+
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+  })
+
+  function InputType(){
+    var dropdown = document.getElementById("UserType");
+       var inputBox = document.getElementById("ContractorName");
+
+       if (dropdown.value === "Contract Based") {
+            inputBox.required = true;
+           inputBox.disabled = false;
+       } else {
+           inputBox.disabled = true;
+       }
+  }
+
+
+
+
+      </script>
+    </body>
+  </html>

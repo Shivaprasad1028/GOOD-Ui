@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- <link rel="stylesheet" href="Project_Selection.css"> -->
+    <style media="screen">
+    *{
+      margin:0px;
+      padding:0px;
+      box-sizing: border-box;
+    }
+    body{
+      display: flex;
+      height: 98vh;
+      justify-content:center;
+      align-items: center;
+      /* padding-right:100px; */
+      background-color:#021952;
+    }
+
+    .container{
+      max-width: 500px;
+      width: 100%;
+      background-color:#fff;
+      padding: 25px 30px;
+      border-radius: 7px;
+      box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+    }
+    .container .head{
+      font-size: 30px;
+      font-weight: 900;
+      justify-content: center;
+      text-align: center;
+      color:#021952;
+    }
+    form .outer.box{
+      width: calc(100%/2 - 20px);
+    }
+    .outer .box{
+         margin : 20px 0px;
+    }
+    .input{
+      justify-content: center;
+      align-items: center;
+      max-width: 500px;
+      width: 80%;
+      height: 30px;
+      /* margin-right:200px; */
+      margin-left:50px;
+      padding-left: 20px;
+      margin-top: 10px;
+      outline:none;
+      border:2px solid grey;
+      border-radius: 10px;
+    }
+
+
+    .select{
+      margin-top: 10px;
+      margin-left:50px;
+
+      justify-content: center;
+      align-items: center;
+      max-width: 500px;
+      width: 80%;
+      height: 30px;
+      margin-right:40px;
+      padding-top: 5px;
+      padding-left: 20px;
+      outline:none;
+      border:2px solid grey;
+      border-radius: 10px;
+    }
+
+
+
+
+    form .button input{
+     height: 100%;
+     max-width: 500px;
+     width: 50%;
+     outline:none;
+     margin-left:110px;
+     color:#00FFDF;
+     font-size: 20px;
+     /* font-weight: 1000; */
+     border-radius: 7px;
+     background :#021952;
+     outline: none;
+    }
+    form .button input:hover{
+      color:#00FFDF;
+      background-color::#021952;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      transition: 0.1s;
+    }
+
+    .input-group {
+        /* margin-bottom: 10px; */
+        max-height:300px;
+        overflow-y: auto;
+    }
+    .input-group input {
+        /* width: calc(100% - 75px);
+        margin-right: 10px;
+        padding: 5px;
+        margin-bottom: 5px; */
+
+        justify-content: center;
+        align-items: center;
+        max-width: 500px;
+        width: 80%;
+        height: 30px;
+        /* margin-right:200px; */
+        margin-left:50px;
+        padding-left: 20px;
+        margin-top: 10px;
+        outline:none;
+        border:2px solid grey;
+        border-radius: 10px;
+    }
+    .input-group button {
+        padding: 5px 10px;
+
+    }
+    #add_button{
+      border: 2px solid grey;
+      border-radius: 20px ;
+      margin-top: 5px;
+      margin-left: 80%;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="head">Project Registration Form </h1>
+      <form class="" name="ProjectForm" action="" method="post">
+        <div class="Outer">
+          <div class="box">
+            <input type="text" name="ProjectName" class="input" value="" placeholder="Enter New Project" required>
+          </div>
+
+          <div id="Outer">
+                  <div class="input-group">
+                      <input type="text" name="Part1" placeholder="Enter Part Name">
+                      <input type="text" name="Part1Quan" placeholder="Enter Quantity">
+                      <button type="button" id="add_button"  onclick="addInput(this)">Add</button>
+                  </div>
+          </div>
+          <div class="button">
+            <input type="submit" name="submit" value="Submit">
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+
+      <script type="text/javascript">
+    function addInput(button) {
+      var inputGroup = button.parentNode;
+
+      var newInputPart = document.createElement("input");
+      newInputPart.type = "text";
+      newInputPart.placeholder = "Enter Part Name";
+      newInputPart.style.marginBottom = "5px";
+
+      var newInputQuantity = document.createElement("input");
+      newInputQuantity.type = "text";
+      newInputQuantity.placeholder = "Enter Quantity";
+      newInputQuantity.style.marginBottom = "5px";
+
+      var inputCount = inputGroup.querySelectorAll('input[type="text"]').length;
+      console.log(inputCount);
+      if (inputCount < 500) {
+        var presetNames = ["Part2", "Part2Quan", "Part3", "Part3Quan", "Part4", "Part4Quan", "Part5", "Part5Quan", "Part6", "Part6Quan", "Part7", "Part7Quan", "Part8", "Part8Quan", "Part9", "Part9Quan", "Part10", "Part10Quan", "Part11", "Part11Quan", "Part12", "Part12Quan", "Part13", "Part13Quan", "Part14", "Part14Quan", "Part15", "Part15Quan", "Part16", "Part16Quan", "Part17", "Part17Quan", "Part18", "Part18Quan", "Part19", "Part19Quan", "Part20", "Part20Quan", "Part21", "Part21Quan", "Part22", "Part22Quan", "Part23", "Part23Quan", "Part24", "Part24Quan", "Part25", "Part25Quan", "Part26", "Part26Quan", "Part27", "Part27Quan", "Part28", "Part28Quan", "Part29", "Part29Quan", "Part30", "Part30Quan", "Part31", "Part31Quan", "Part32", "Part32Quan", "Part33", "Part33Quan", "Part34", "Part34Quan", "Part35", "Part35Quan", "Part36", "Part36Quan", "Part37", "Part37Quan", "Part38", "Part38Quan", "Part39", "Part39Quan", "Part40", "Part40Quan", "Part41", "Part41Quan", "Part42", "Part42Quan", "Part43", "Part43Quan", "Part44", "Part44Quan", "Part45", "Part45Quan", "Part46", "Part46Quan", "Part47", "Part47Quan", "Part48", "Part48Quan", "Part49", "Part49Quan", "Part50", "Part50Quan","Part51", "Part51Quan",	"Part52", "Part52Quan",	"Part53", "Part53Quan",	"Part54", "Part54Quan",	"Part55", "Part55Quan",	"Part56", "Part56Quan",	"Part57", "Part57Quan",	"Part58", "Part58Quan",	"Part59", "Part59Quan",	"Part60", "Part60Quan",	"Part61", "Part61Quan",	"Part62", "Part62Quan",	"Part63", "Part63Quan",	"Part64", "Part64Quan",	"Part65", "Part65Quan",	"Part66", "Part66Quan",	"Part67", "Part67Quan",	"Part68", "Part68Quan",	"Part69", "Part69Quan",	"Part70", "Part70Quan",	"Part71", "Part71Quan",	"Part72", "Part72Quan",	"Part73", "Part73Quan",	"Part74", "Part74Quan",	"Part75", "Part75Quan",	"Part76", "Part76Quan",	"Part77", "Part77Quan",	"Part78", "Part78Quan",	"Part79", "Part79Quan",	"Part80", "Part80Quan",	"Part81", "Part81Quan",	"Part82", "Part82Quan",	"Part83", "Part83Quan",	"Part84", "Part84Quan",	"Part85", "Part85Quan",	"Part86", "Part86Quan",	"Part87", "Part87Quan",	"Part88", "Part88Quan",	"Part89", "Part89Quan",	"Part90", "Part90Quan",	"Part91", "Part91Quan",	"Part92", "Part92Quan",	"Part93", "Part93Quan",	"Part94", "Part94Quan",	"Part95", "Part95Quan",	"Part96", "Part96Quan",	"Part97", "Part97Quan",	"Part98", "Part98Quan",	"Part99", "Part99Quan",	"Part100", "Part100Quan"];
+        newInputPart.name = presetNames[inputCount-2];
+        console.log(newInputPart.name );
+        newInputQuantity.name = presetNames[inputCount-1];
+        console.log(newInputQuantity.name);
+      } else {
+        newInputPart.name = "Part" + (inputCount + 1);
+        newInputQuantity.name = "Part" + (inputCount + 1) + "Quan";
+      }
+
+      inputGroup.insertBefore(newInputPart, button);
+      inputGroup.insertBefore(newInputQuantity, button);
+    }
+  </script>
+
+
+    <script type="text/javascript">
+      const scriptURL = "https://script.google.com/macros/s/AKfycbwJWe9NlA6aa_Mw-ybFI9UCBzSgd6PZj3a55LFGrxE3TVe4pABxNZUMikw69gNKmObcmA/exec"
+      const form = document.forms['ProjectForm']
+
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)
+          })
+          .then(response => alert("Thank you! your form is submitted successfully." ))
+          .then(()=> {window.location.reload();
+        })
+        .catch(error => console.error('Error!', error.message))
+      })
+
+    </script>
+  </body>
+</html>

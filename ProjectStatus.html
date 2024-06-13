@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!-- <link rel="stylesheet" href="ProjectStatus.css"> -->
+
+    <style media="screen">
+      body{
+        /* background-color: #121227; */
+        display: flex;
+        height: 98vh;
+        justify-content:center;
+        align-items: center;
+        padding-left: 10px;
+        background-color: #021952;
+      }
+      .container{
+        /* max-height: 1000px; */
+
+        max-width: 500px;
+        width: 40%;
+        background-color:#fff;
+        padding: 25px 30px;
+        border-radius: 7px;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+      }
+      .container h1{
+        margin-top: 10px;
+        font-size: 30px;
+        font-weight: 900;
+        justify-content: center;
+        text-align: center;
+        color:White;
+        background-color:  #021952;
+          box-shadow: 0px 0px 10px 2px #ccc;
+
+      }
+      .input_feild{
+        /* margin: 20px; */
+        margin: 10px;
+        display: flex;
+        align-items: center;
+
+        color:;
+      }
+      label{
+        /* border: 3px solid black; */
+        width:90%;
+        /* width:50%; */
+        margin-right: 200px;
+        font-size: 18px;
+      }
+      .input{
+        width: 100%;
+        color: black;
+        outline: none;
+        border:2px solid #121227;
+        border-radius: 5px;
+      }
+
+      .input:focus{
+        border:2px solid #121227;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+      }
+      select{
+        width: 100%;
+        color: black;
+        outline: none;
+        border:2px solid #121227;
+        border-radius: 5px;
+      }
+      select:focus{
+        border:2px solid #121227;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+      }
+      form .button input{
+       /* display: flex; */
+       height: 100%;
+       max-width: 500px;
+       width: 50%;
+       outline:none;
+       margin-left: 120px;
+       color:#00FFDF;
+       font-size: 20px;
+       /* font-weight: 1000; */
+       border-radius: 7px;
+       background :  #021952;
+       outline: none;
+      }
+      form .button input:hover{
+        color: #00FFDF;
+        background-color:  #021952;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        transition: 0.1s;
+      }
+
+      input[readonly]{
+        background-color:#dedddc;
+        color: black;
+      }
+
+  @media(max-width:600px){
+    body{
+      /* background-color: #121227; */
+      display: flex;
+      height: 98vh;
+      justify-content:center;
+      align-items: center;
+      padding-left: 10px;
+      background-color: #021952;
+    }
+    .container{
+      margin-top: 130px;
+      margin-right:10px;
+      /* margin-bottom: 50px; */
+      /* max-height: 2000px; */
+      height:120%;
+      /* max-width: 600px; */
+      width: 100%;
+      background-color:#fff;
+      padding-top:25px;
+      padding-bottom: 0px;
+      border-radius: 7px;
+      box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+
+    }
+    .container h1{
+      margin-top: 10px;
+      font-size: 30px;
+      font-weight: 900;
+      justify-content: center;
+      text-align: center;
+      color:White;
+      background-color:  #021952;
+      box-shadow: 0px 0px 10px 2px #ccc;
+
+    }
+    .input_feild{
+      /* margin: 20px; */
+      /* margin-bottom: 10px; */
+      display:block;
+      /* align-items: center; */
+
+      /* color:; */
+    }
+    label{
+      /* border: 3px solid black; */
+      /* width:100%; */
+      /* width:0%;
+     */
+     /* text-decoration: bold; */
+     /* font-size: 30px; */
+     /* display: none; */
+     display:block;
+      /* margin-bottom : px; */
+      font-size: 18px;
+    }
+    .input{
+      margin-top: 5px;
+      width: 100%;
+      color: black;
+      outline: none;
+      border:2px solid #121227;
+      border-radius: 5px;
+      height: 25px;
+      font-size: 17px;
+    }
+
+    .input:focus{
+      border:2px solid #121227;
+      box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    }
+    select{
+      margin-top: 5px;
+      color: black;
+      /* width: 400px; */
+      outline: none;
+      border:2px solid #121227;
+      border-radius: 5px;
+      height: 25px;
+      font-size: 14px;
+    }
+    select:focus{
+      border:2px solid #121227;
+      box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    }
+    form .button input{
+     /* display: flex; */
+     height: 100%;
+     max-width: 500px;
+     width: 50%;
+     outline:none;
+     margin-left: 90px;
+     color:#00FFDF;
+     font-size: 20px;
+     /* font-weight: 1000; */
+     border-radius: 7px;
+     background :  #021952;
+     outline: none;
+    }
+    form .button input:hover{
+      color: #00FFDF;
+      background-color:  #021952;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      transition: 0.1s;
+    }
+
+    input[readonly]{
+      background-color:#dedddc;
+      color: black;
+    }
+  }
+
+
+    @media(min-width:600px) and (max-width:800px){
+      body{
+        /* background-color: #121227; */
+        display: flex;
+        height: 120vh;
+        justify-content:center;
+        align-items: center;
+        padding-left: 10px;
+        background-color: #021952;
+      }
+      .container{
+        margin-top: 300px;
+        margin-bottom:300px;
+        margin-right:10px;
+
+        /* margin-bottom: 50px; */
+        /* max-height: 2000px; */
+        height:90%;
+        max-width: 700px;
+        width: 100%;
+        background-color:#fff;
+        padding-top:25px 30px;
+        border-radius: 7px;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+
+      }
+      .container h1{
+        margin-top: 10px;
+        font-size: 30px;
+        font-weight: 900;
+        justify-content: center;
+        text-align: center;
+        color:White;
+        background-color:  #021952;
+        box-shadow: 0px 0px 10px 2px #ccc;
+
+      }
+      .input_feild{
+        margin: 20px;
+        margin-bottom: 10px;
+        display:flex;
+        align-items: center;
+
+        /* color:; */
+      }
+      label{
+        /* border: 3px solid black; */
+        width:100%;
+        /* width:0%;
+       */
+       /* text-decoration: bold; */
+       /* font-size: 30px; */
+       /* display: flex; */
+       /* display:block; */
+        /* margin-bottom : px; */
+        font-size: 18px;
+      }
+      .input{
+        margin-top: 5px;
+        width: 100%;
+        color: black;
+        outline: none;
+        border:2px solid #121227;
+        border-radius: 5px;
+        height: 25px;
+        font-size: 17px;
+      }
+
+      .input:focus{
+        border:2px solid #121227;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+      }
+      select{
+        margin-top: 5px;
+        color: black;
+        /* width: 400px; */
+        outline: none;
+        border:2px solid #121227;
+        border-radius: 5px;
+        height: 25px;
+        font-size: 14px;
+      }
+      select:focus{
+        border:2px solid #121227;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+      }
+      form .button input{
+       /* display: flex; */
+       height: 100%;
+       max-width: 500px;
+       width: 50%;
+       outline:none;
+       margin-left: 150px;
+       color:#00FFDF;
+       font-size: 20px;
+       /* font-weight: 1000; */
+       border-radius: 7px;
+       background :  #021952;
+       outline: none;
+      }
+      form .button input:hover{
+        color: #00FFDF;
+        background-color:  #021952;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        transition: 0.1s;
+      }
+
+      input[readonly]{
+        background-color:#dedddc;
+        color: black;
+      }
+    }
+
+    @media(min-width:800px) and (max-width:1000px){
+      body{
+        /* background-color: #121227; */
+        display: flex;
+        height: 120vh;
+        justify-content:center;
+        align-items: center;
+        padding-left: 10px;
+        background-color: #021952;
+      }
+      .container{
+        margin-top: 300px;
+        margin-bottom:300px;
+        margin-right:10px;
+
+        /* margin-bottom: 50px; */
+        /* max-height: 2000px; */
+        height:90%;
+        max-width: 700px;
+        width: 100%;
+        background-color:#fff;
+        padding-top:25px 30px;
+        border-radius: 7px;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+
+      }
+      .container h1{
+        margin-top: 10px;
+        font-size: 30px;
+        font-weight: 900;
+        justify-content: center;
+        text-align: center;
+        color:White;
+        background-color:  #021952;
+        box-shadow: 0px 0px 10px 2px #ccc;
+
+      }
+      .input_feild{
+        margin: 20px;
+        margin-bottom: 10px;
+        display:flex;
+        align-items: center;
+
+        /* color:; */
+      }
+      label{
+        /* border: 3px solid black; */
+        width:100%;
+        /* width:0%;
+       */
+       /* text-decoration: bold; */
+       /* font-size: 30px; */
+       /* display: flex; */
+       /* display:block; */
+        /* margin-bottom : px; */
+        font-size: 18px;
+      }
+      .input{
+        margin-top: 5px;
+        width: 100%;
+        color: black;
+        outline: none;
+        border:2px solid #121227;
+        border-radius: 5px;
+        height: 25px;
+        font-size: 17px;
+      }
+
+      .input:focus{
+        border:2px solid #121227;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+      }
+      select{
+        margin-top: 5px;
+        color: black;
+        width: 100%;
+
+        /* width: 400px; */
+        outline: none;
+        border:2px solid #121227;
+        border-radius: 5px;
+        height: 27px;
+        font-size: 14px;
+      }
+      select:focus{
+        border:2px solid #121227;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+      }
+      form .button input{
+       /* display: flex; */
+       height: 100%;
+       max-width: 500px;
+       width: 50%;
+       outline:none;
+       margin-left: 150px;
+       color:#00FFDF;
+       font-size: 20px;
+       /* font-weight: 1000; */
+       border-radius: 7px;
+       background :  #021952;
+       outline: none;
+      }
+      form .button input:hover{
+        color: #00FFDF;
+        background-color:  #021952;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        transition: 0.1s;
+      }
+
+      input[readonly]{
+        background-color:#dedddc;
+        color: black;
+      }
+    }
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+    <h1>Project Status</h1>
+    <form class="form" name='ProjectStatus' method="post" id="myform">
+
+      <div class="input_feild">
+        <label for="">Date</label>
+        <input type="text"  name="Date" class="input" id="Date" value="" required readonly>
+      </div>
+
+      <div class="input_feild">
+        <label for="">Project Name</label>
+        <select class=ProjectName id="SecondDropdown" name="Project_Name" required>
+          <option value="">Select Project</option>
+        </select>
+      </div>
+
+      <div class="input_feild">
+        <label for="">Part Name</label>
+        <select  id="ThirdDropdown" name="Part_Name"  required>
+          <option value="">Select Project</option>
+        </select>
+      </div>
+
+    <div class="input_feild">
+      <label for="">Quantity</label>
+      <input type="text" id="Quantity" name="Quantity"  class="input" readonly required>
+    </div>
+
+    <div class="input_feild">
+      <label for="">Dispatch</label>
+      <input type="text" id="Dispatch" name="Dispatch"  class="input" readonly required>
+    </div>
+
+    <div class="input_feild">
+      <label for="" id="">Dispatch Pending</label>
+      <input type="text" id="Dispatch_Pending" name="Dispatch_Pending" class="input" required readonly>
+    </div>
+
+    <div class="input_feild">
+      <label for="">Built Up</label>
+      <input type="text" id="Built_Up" name="Built_Up"  class="input" >
+    </div>
+
+      <div class="input_feild">
+        <label for="">Welding</label>
+        <input type="text" id="Welding" name="Welding"  class="input" >
+      </div>
+
+      <div class="input_feild">
+        <label for="">Fit Up</label >
+        <input type="text" id="Fit_Up" name="Fit_up" class="input" value="">
+      </div>
+
+      <div class="input_feild">
+        <label for="">Finishing</label >
+        <input type="text" id="Finishing" name="Finishing" class="input" value="">
+      </div>
+
+      <div class="input_feild">
+        <label for="">Paint</label>
+        <input type="text"id="Paint" name="Paint" class="input" value="">
+      </div>
+
+      <div class="input_feild">
+        <label for="">Pending</label>
+        <input type="text" name="Pending" id="pending" class="input" value="" readonly required>
+      </div>
+
+      <div class="button">
+        <input type="submit" name="submit" value="Submit" id="submitbutton">
+      </div>
+
+      <div>
+        <p id="Loadingmessage"></p>
+        <p id="Loadingmessage2"></p>
+        <p id="Loadingmessage3"></p>
+      </div>
+
+        </form>
+
+      </div>
+
+      <script type="text/javascript">
+
+      function setCurrentDate() {
+        var currentDate = new Date();
+
+        const year = currentDate.getFullYear();
+        const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+        const day = currentDate.getDate().toString().padStart(2, '0');
+
+        // const currentDateString = `${year}-${month}-${day}`;
+            const currentDateString = day+'-'+month+'-'+year;
+
+        document.getElementById('Date').value = currentDateString;
+      }
+
+      setCurrentDate();
+      setInterval(setCurrentDate, 86400000);
+      </script>
+
+      <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+      let projectAPIurl = "https://script.google.com/macros/s/AKfycbwE3zg4tEQujARi-6G515J23E1O0661HM4r2Z2BisB0KJZzVIXZjFrfhvF8tG6Jn8yZig/exec";
+
+      const ProjectSelect = document.querySelector('.ProjectName');
+      const PartSelect = document.querySelector('#ThirdDropdown');
+      const QuantityInput = document.getElementById('Quantity');
+
+      // Load Project data
+      fetch(projectAPIurl)
+        .then(response => response.json())
+        .then(data => {
+          data.forEach(project => {
+            const option = document.createElement('option');
+            option.textContent = project.ProjectName;
+            option.value = project.ProjectName;
+            ProjectSelect.appendChild(option);
+          });
+        })
+        .catch(error => console.log(error));
+
+        ProjectSelect.addEventListener('change', function () {
+        // Clear the options in the Part dropdown
+        PartSelect.innerHTML = '<option value="">Select Part</option>';
+
+        const selectedProject = this.value;
+        document.getElementById('Loadingmessage2').innerText = "Data fetching.....";
+
+        fetch(projectAPIurl)
+            .then(response => {
+                document.getElementById('Loadingmessage2').style.display = "none";
+                return response.json();
+            })
+            .then(data => {
+                const projectData = data.find(project => project.ProjectName === selectedProject);
+                const parts = Object.entries(projectData).filter(([key, value]) => key.startsWith("Part") && !key.endsWith("Quan") && value !== "");
+
+                parts.forEach(([key, value]) => {
+                    const option = document.createElement('option');
+                    option.textContent = value;
+                    option.value = value;
+                    PartSelect.appendChild(option);
+                });
+            })
+            .catch(error => console.log(error));
+    });
+
+
+      PartSelect.addEventListener('change', function () {
+      const selectedPart = this.value;
+      const selectedProject = ProjectSelect.value;
+
+      fetch(projectAPIurl)
+          .then(response => response.json())
+          .then(data => {
+              const projectData = data.find(project => project.ProjectName === selectedProject);
+              // console.log(projectData);
+              const parts = Object.entries(projectData).filter(([key, value]) => key.startsWith("Part") && value !== "");
+              // console.log(parts);
+              const partObj = parts.find(([key, value]) => value === selectedPart);
+              // console.log(partObj);
+              if (partObj) {
+                  const partNumber = partObj[0].replace("Part", "");
+                  // console.log(partNumber);
+                  const partQuantityKey = `Part${partNumber}Quan`;
+                  // console.log(partQuantityKey);
+
+                  const partQuantity = projectData[partQuantityKey];
+                  // console.log(partQuantity);
+
+                  QuantityInput.value = partQuantity || "";
+              } else {
+                  QuantityInput.value = ""; // Reset quantity input if part not found
+              }
+          })
+          .catch(error => console.log(error));
+  });
+
+
+    });
+
+      </script>
+
+
+
+      <!-- <script type="text/javascript">
+
+      function setCurrentDate() {
+        var currentDate = new Date();
+
+        const year = currentDate.getFullYear();
+        const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+        const day = currentDate.getDate().toString().padStart(2, '0');
+
+        // const currentDateString = `${year}-${month}-${day}`;
+            const currentDateString = day+'-'+month+'-'+year;
+
+        document.getElementById('Date').value = currentDateString;
+      }
+
+      setCurrentDate();
+      setInterval(setCurrentDate, 86400000);
+      </script> -->
+
+
+      <script type="text/javascript">
+      // const scriptURL = "https://script.google.com/macros/s/AKfycbxXDPx8sdeSdhTAf27gn8jLK9q7Uu3uADpWQuZGWkSH2emgDGY-q1daiCM96Zx2MfYnhQ/exec";
+      const scriptURL = "https://script.google.com/macros/s/AKfycbx3OCN98cR8xcSzvAJq6qkKyQlKMlSflNqkdYx_ONfA-IbaTvL-rSpdyjqog6OMlGmkcA/exec";
+const form = document.forms['ProjectStatus'];
+
+// Add an event listener to the form submission
+// Add an event listener to the form submission
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById('Loadingmessage3').innerText = "Submitting Form.....";
+
+    // Check for empty fields and set their values to zero
+    const inputs = form.querySelectorAll('.input');
+    inputs.forEach(input => {
+        if (input.value.trim() === '') {
+            input.value = '0';
+        }
+    });
+
+    const builtUpValue = parseFloat(document.getElementById('Built_Up').value) || 0;
+    const weldingValue = parseFloat(document.getElementById('Welding').value) || 0;
+    const fitUpValue = parseFloat(document.getElementsByName('Fit_up')[0].value) || 0;
+    const finishingValue = parseFloat(document.getElementsByName('Finishing')[0].value) || 0;
+    const paintValue = parseFloat(document.getElementsByName('Paint')[0].value) || 0;
+
+
+    const totalPending = builtUpValue + weldingValue + fitUpValue + finishingValue + paintValue;
+
+
+    const dispatchPendingInput = parseFloat(document.getElementById('Dispatch_Pending').value) || 0;
+
+
+    const difference = dispatchPendingInput - totalPending;
+
+
+    document.getElementById('pending').value = difference;
+
+    // Submit the form
+    fetch(scriptURL, {
+        method: 'POST',
+        body: new FormData(form)
+    })
+    .then(response => {
+        document.getElementById('Loadingmessage3').style.display = "none";
+        alert("Thank you! your form is submitted successfully.");
+       window.location.reload();
+
+    })
+    .catch(error => console.error('Error!', error.message));
+});
+
+      </script>
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function () {
+    const projectAPIurl = "https://script.google.com/macros/s/AKfycbykp7ZxjsrbxunZbXTWYbckGItNvGHA16f8MKBGVljLZtYrggJtzj-ZwedKGO__PLKfpw/exec";
+
+    const ProjectSelect = document.querySelector('.ProjectName');
+
+
+    ProjectSelect.addEventListener('change', function () {
+        const selectedProject = this.value;
+
+        fetch(`${projectAPIurl}?projectName=${selectedProject}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                if (data.error && data.error === 'Sheet not found') {
+                    alert('Lets Start New Project');
+                    // document.addEventListener("DOMContentLoaded", function () {
+                    let projectAPIurl = "https://script.google.com/macros/s/AKfycbwE3zg4tEQujARi-6G515J23E1O0661HM4r2Z2BisB0KJZzVIXZjFrfhvF8tG6Jn8yZig/exec";
+
+                    const ProjectSelect = document.querySelector('.ProjectName');
+                    const PartSelect = document.querySelector('#ThirdDropdown');
+                    const QuantityInput = document.getElementById('Quantity');
+                    const Dispatch_PendingInput = document.getElementById('Dispatch_Pending');
+                    const DispatchInput = document.getElementById('Dispatch');
+// DispatchInput
+                    // Load Project data
+                    fetch(projectAPIurl)
+                      .then(response => response.json())
+                      .then(data => {
+                        data.forEach(project => {
+                          const option = document.createElement('option');
+                          option.textContent = project.ProjectName;
+                          option.value = project.ProjectName;
+                          ProjectSelect.appendChild(option);
+                        });
+                      })
+                      .catch(error => console.log(error));
+
+                      ProjectSelect.addEventListener('change', function () {
+                      // Clear the options in the Part dropdown
+                      PartSelect.innerHTML = '<option value="">Select Part</option>';
+
+                      const selectedProject = this.value;
+                      document.getElementById('Loadingmessage2').innerText = "Data fetching.....";
+
+                      fetch(projectAPIurl)
+                          .then(response => {
+                              document.getElementById('Loadingmessage2').style.display = "none";
+                              return response.json();
+                          })
+                          .then(data => {
+                              const projectData = data.find(project => project.ProjectName === selectedProject);
+                              const parts = Object.entries(projectData).filter(([key, value]) => key.startsWith("Part") && !key.endsWith("Quan") && value !== "");
+
+                              parts.forEach(([key, value]) => {
+                                  const option = document.createElement('option');
+                                  option.textContent = value;
+                                  option.value = value;
+                                  PartSelect.appendChild(option);
+                              });
+                          })
+                          .catch(error => console.log(error));
+                  });
+
+
+                    PartSelect.addEventListener('change', function () {
+
+                    const selectedPart = this.value;
+                    const selectedProject = ProjectSelect.value;
+
+                    fetch(projectAPIurl)
+                        .then(response => response.json())
+                        .then(data => {
+
+                            const projectData = data.find(project => project.ProjectName === selectedProject);
+                            // console.log(projectData);
+                            const parts = Object.entries(projectData).filter(([key, value]) => key.startsWith("Part") && value !== "");
+                            // console.log(parts);
+                            const partObj = parts.find(([key, value]) => value === selectedPart);
+                            // console.log(partObj);
+                            if (partObj) {
+                                const partNumber = partObj[0].replace("Part", "");
+                                // console.log(partNumber);
+                                const partQuantityKey = `Part${partNumber}Quan`;
+                                // console.log(partQuantityKey);
+
+                                const partQuantity = projectData[partQuantityKey];
+                                // console.log(partQuantity);
+
+                                QuantityInput.value = partQuantity || "";
+                                Dispatch_PendingInput.value = partQuantity || "";
+                                DispatchInput.value ="0";
+                            } else {
+                                QuantityInput.value = ""; // Reset quantity input if part not found
+                            }
+                        })
+                        .catch(error => console.log(error));
+                });
+
+
+                  // });
+                } else {
+                    const PartSelect = document.getElementById('ThirdDropdown');
+                    PartSelect.addEventListener('change', function () {
+                        const dropdowndata = this.value;
+                        console.log(dropdowndata);
+                        const partdata = data.Part_Name;
+
+                        console.log("API Part_name:", data.Part_Name);
+                        console.log("Dropdown Part_name:", dropdowndata);
+
+                        const activePart = data.filter(sheetdata => sheetdata.Part_Name.trim() === dropdowndata.trim());
+                        console.log(activePart);
+                        if (activePart.length > 0) {
+                            const quantity = parseFloat(activePart[0].Quantity);
+                            const dispatch = parseFloat(activePart[0  ].Dispatch);
+                            if (!isNaN(quantity) && !isNaN(dispatch)) {
+                                const dispatchPending = quantity - dispatch;
+                                document.getElementById('Dispatch').value = dispatch;
+                                document.getElementById('Dispatch_Pending').value = dispatchPending;
+                            } else {
+                                document.getElementById('Dispatch').value = "0";
+                                document.getElementById('Dispatch_Pending').value = "";
+                            }
+                        }
+                      else {
+                          document.getElementById('Dispatch').value = "0"; // Set Dispatch to 0 since part not found
+
+                          // Wait until Quantity value is available and not equal to zero
+                          const waitForQuantity = async () => {
+                              while (true) {
+                                  const quantityInput = document.getElementById('Quantity');
+                                  const quantity = parseFloat(quantityInput.value);
+
+                                  if (!isNaN(quantity) && quantity !== 0) {
+                                      // If Quantity is available and not equal to zero, copy it to Dispatch Pending
+                                      document.getElementById('Dispatch_Pending').value = quantity;
+                                     // Exit the loop once Quantity is copied
+                                  }
+
+                                  // Wait for 500 milliseconds before checking again
+                                  await new Promise(resolve => setTimeout(resolve, 500));
+                              }
+                          };
+
+                          // Call the async function to wait for Quantity
+                          waitForQuantity();
+
+                          // Handle sheet not found here, you can display an alert or any other appropriate message
+                          alert('lets Start Working on this Part');
+
+                      }
+
+
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+                // Handle error here, you can display an alert or any other appropriate message
+                alert('Error fetching data. Please try again later.');
+            });
+    });
+});
+
+
+
+</script>
+<!--
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        const QuantityInput = document.getElementById('Quantity');
+        console.log(QuantityInput);
+        const DispatchInput = document.getElementById('Dispatch');
+        const DispatchPendingInput = document.getElementById('Dispatch_Pending');
+
+        // Add event listeners to Quantity and Dispatch input fields
+        QuantityInput.addEventListener('input', updateDispatchPending);
+        DispatchInput.addEventListener('input', updateDispatchPending);
+
+        function updateDispatchPending() {
+            const quantity = parseFloat(QuantityInput.value);
+            const dispatch = parseFloat(DispatchInput.value);
+
+            // Check if both Quantity and Dispatch have valid values
+            if (!isNaN(quantity) && !isNaN(dispatch)) {
+                // Calculate the difference
+                const dispatchPending = quantity - dispatch;
+
+                // Update Dispatch_Pending input field
+                DispatchPendingInput.value = dispatchPending;
+            }
+            else {
+                // If either Quantity or Dispatch is not filled, clear Dispatch_Pending field
+                DispatchPendingInput.value = "";
+            }
+        }
+    });
+</script> -->
+
+
+
+
+    </body>
+  </html>

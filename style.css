@@ -1,0 +1,320 @@
+
+/* button effect */
+.buttons {
+   margin-left: -20px;
+ 
+  }
+  
+  .btn-hover {
+    width: 150px;
+    font-size: 15px;
+    font-weight: 700;
+    
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 50px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+  
+    border-radius: 25px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .btn-hover:focus {
+    outline: none;
+  }
+  
+  .btn-hover.color-9 {
+    background-image: linear-gradient(to right, #6507f3, #b300ff, #c804fe, #9900ff);
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+  }
+  /* button effect  end */
+.bounce1{
+    animation: bounce 1.5s infinite;
+}
+.bounce2{
+    animation: bounce 2.0s infinite;
+}
+.bounce3{
+    animation: bounce 2.8s infinite;
+
+}
+
+@keyframes bounce{
+    0%, 100%{
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50%{
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+  
+/*left to right */
+.wrapper{
+    display: flex;
+  }
+  .wrapper .static-txt{
+
+    font-size: 70px;
+    font-weight: 600;
+  }
+  .wrapper .dynamic-txts{
+    margin-left: 15px;
+    margin-top: 10px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+  }
+  .dynamic-txts li{
+    list-style: none;
+    color: #7300ff;
+    font-size: 60px;
+    font-weight: 800;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+  }
+  @keyframes slide {
+    100%{
+      top: -360px;
+    }
+  }
+  .dynamic-txts li span{
+    position: relative;
+    margin: 5px 0;
+    line-height: 90px;
+  }
+  .dynamic-txts li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #fdf3ff;
+    border-left: 2px solid #ae00ff;
+    animation: typing 3s steps(10) infinite;
+  }
+  @keyframes typing {
+    40%, 60%{
+      left: calc(100% + 30px);
+    }
+    100%{
+      left: 0;
+    }
+  }
+
+
+/* card */
+.card {
+  display: grid;
+  place-items: center;
+  color: white;
+  width: 100vw;
+
+  max-width: 13.875rem;
+  height: 15.125rem;
+  overflow: hidden;
+
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+}
+
+.card > * {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+
+
+.card__content {
+  --flow-space: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: flex-end;
+  height: 50%;
+  padding: 12% 0.5rem 1.075rem;
+  margin-right: 39%;
+ 
+}
+
+.card__content--container {
+  --flow-space: 1.25rem;
+}
+
+.card__title {
+  position: relative;
+  color: black;
+  width: fit-content;
+  width: -moz-fit-content; /* Prefijo necesario para Firefox  */
+}
+
+.card__title::after {
+  content: "";
+  position: absolute;
+  height: 0.3125rem;
+  width: calc(100% + 1.25rem);
+  bottom: calc((1.25rem - 0.5rem) * -1);
+  left: -1.25rem;
+  background-color: var(--brand-color);
+}
+
+.card__button {
+  padding: 0.75em 1.6em;
+  width: fit-content;
+  width: -moz-fit-content; /* Prefijo necesario para Firefox  */
+  font-variant: small-caps;
+  font-weight: bold;
+  border-radius: 0.45em;
+  border: none;
+  background-color: var(--brand-color);
+  font-family: var(--font-title);
+  font-size: 1.125rem;
+  color: var(--black);
+}
+
+.card__button:focus {
+  outline: 2px solid black;
+  outline-offset: -5px;
+}
+
+@media (any-hover: hover) and (any-pointer: fine) {
+  .card__content {
+    transform: translateY(82%);
+    transition: transform 500ms ease-out;
+    transition-delay: 500ms;
+
+  }
+
+  .card__title::after {
+    opacity: 0;
+    transform: scaleX(0);
+    transition: opacity 1000ms ease-in, transform 500ms ease-out;
+    transition-delay: 500ms;
+    transform-origin: right;
+  }
+
+  .card__background {
+    transition: transform 500ms ease-in;
+  }
+
+  .card__content--container > :not(.card__title),
+  .card__button {
+    opacity: 0;
+    transition: transform 500ms ease-out, opacity 500ms ease-out;
+  }
+
+  .card:hover,
+  .card:focus-within {
+    transition: transform 500ms ease-in;
+  }
+
+  .card:hover .card__content,
+  .card:focus-within .card__content {
+    transform: translateY(30%);
+    transition: transform 500ms ease-in;
+  }
+
+  
+  .card:focus-within .card__content {
+    transition-duration: 0ms;
+  }
+
+ 
+
+  .card:hover .card__content--container > :not(.card__title),
+  .card:hover .card__button,
+  .card:focus-within .card__content--container > :not(.card__title),
+  .card:focus-within .card__button {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+    transition-delay: 1000ms;
+  }
+
+  .card:hover .card__title::after,
+  .card:focus-within .card__title::after {
+    opacity: 1;
+
+    transform-origin: left;
+    transition: opacity 500ms ease-in, transform 500ms ease-in;
+    transition-delay: 500ms;
+  }
+}
+.input::placeholder{
+  color: white;
+  
+}
+.btn-sub{
+  background-color: white;
+  
+}
+
+/*dropdown */
+.submenu{
+  display: none;
+}
+.submenu1{
+  display: none;
+}
+.submenu{
+  background-color: white;
+  position: absolute;
+
+
+ justify-content: center;
+ text-align: center;
+ align-items: center;
+}
+.submenu1{
+  background-color: white;
+  position: absolute;
+  right: 10px;
+ justify-content: center;
+ text-align: center;
+ align-items: center;
+}
+.submenu1 li a{
+  text-decoration: none;
+}
+.submenu li a{
+  text-decoration: none;
+}
+.menu li:hover .submenu{
+  display:block;
+  transition: 0.30s;
+}
+.menu li:hover .submenu1{
+  display:block;
+  transition: 0.30s;
+}
+.menu a:hover{
+  transition: 0.30s;
+}
+.menu a{
+  display: block;
+  
+}
+.menu li{
+  position: relative;
+}
+.menu li, .menu a{
+  display: block;
+  /* margin-left:50px; */
+}
